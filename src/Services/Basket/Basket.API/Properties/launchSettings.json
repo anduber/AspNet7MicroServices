@@ -15,7 +15,9 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5001",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "PROTOBUF_TOOLS_OS": "macosx",
+        "PROTOBUF_TOOLS_CPU": "arm64"
       },
       "dotnetRunMessages": true
     },
