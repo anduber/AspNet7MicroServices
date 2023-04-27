@@ -4,7 +4,7 @@ using Ordering.Domain.Common;
 
 namespace Ordering.Domain.Entities
 {
-    public class Order:EntityBase
+    public class Order : EntityBase
     {
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
@@ -15,21 +15,14 @@ namespace Ordering.Domain.Entities
         public string EmailAddress { get; set; }
         public string AddressLine { get; set; }
         public string Country { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public string? State { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public string? ZipCode { get; set; }
 
         // Payment
-        [Required(AllowEmptyStrings = true)]
-        public string CardName { get; set; }
-        [Required(AllowEmptyStrings = true)]
+        public string? CardName { get; set; }
         public string? CardNumber { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public string? Expiration { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public string? CVV { get; set; }
-        [Required(AllowEmptyStrings = true)]
         public int? PaymentMethod { get; set; }
     }
 }

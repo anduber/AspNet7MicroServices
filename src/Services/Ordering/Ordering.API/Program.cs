@@ -29,7 +29,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthorization();
 
-
+app.MigrateDatabase<OrderContext>((context, services) =>
+ {
+     var logger = services.GetService<ILogger<OrderContextSeed>>();
+     OrderContextSeed
+         .SeedAsync(context, logger)
+         .Wait();
+ });
 app.MapControllers();
 
 app.Run();

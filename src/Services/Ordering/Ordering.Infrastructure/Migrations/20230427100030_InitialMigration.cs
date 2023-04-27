@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ordering.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -24,13 +24,13 @@ namespace Ordering.Infrastructure.Migrations
                     EmailAddress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AddressLine = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Expiration = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CVV = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PaymentMethod = table.Column<int>(type: "int", nullable: false),
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ZipCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CardName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CardNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Expiration = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CVV = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PaymentMethod = table.Column<int>(type: "int", nullable: true),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     LastModifiedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),

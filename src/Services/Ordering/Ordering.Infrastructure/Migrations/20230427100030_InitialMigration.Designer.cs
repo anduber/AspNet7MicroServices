@@ -12,8 +12,8 @@ using Ordering.Infrastructure.Persistence;
 namespace Ordering.Infrastructure.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    [Migration("20230424152348_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230427100030_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,15 +38,12 @@ namespace Ordering.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CVV")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CardName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CardNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Country")
@@ -64,7 +61,6 @@ namespace Ordering.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Expiration")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
@@ -82,11 +78,9 @@ namespace Ordering.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PaymentMethod")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("State")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalPrice")
@@ -97,7 +91,6 @@ namespace Ordering.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ZipCode")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
