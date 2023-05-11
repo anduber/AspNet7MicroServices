@@ -20,6 +20,8 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 
 builder.Services.AddSwaggerGen();
 
+
+
 builder.Services.AddMassTransit(config => {
 
     config.AddConsumer<BasketCheckoutConsumer>();
